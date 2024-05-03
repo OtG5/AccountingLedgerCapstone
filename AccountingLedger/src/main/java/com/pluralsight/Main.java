@@ -39,4 +39,15 @@ public class Main {
 
     }
 
+    public static double Payment() {
+        System.out.println("Please type payment amount");
+        System.out.println("Enter Price (ex: 12.99)");
+        double deposit  = scanner.nextDouble;
+    }
+
+    public String ledger(){
+        
+    }
+}
+
 }
