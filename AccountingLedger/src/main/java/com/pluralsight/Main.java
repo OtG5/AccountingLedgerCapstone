@@ -7,12 +7,12 @@ public class Main {
 
         String choice = scanner.nextLine();
         switch (choice) {
-            case "D": deposit();
+            case 1: deposit();
             break;
-           // case L:
-            //    break;
-            //case X:
-               // break;
+            case 2 :
+            case 3:
+            case 4:
+
 
         }
 
@@ -20,15 +20,23 @@ public class Main {
     }
 
     public static void homeScreen() {
-        System.out.println("D) Add Deposit");
-        System.out.println("P) Make Payment");
-        System.out.println("L)Ledger");
-        System.out.println("X) Exit ");
-        System.out.print("Choose type letter: ");
+        System.out.println("1. D) Add Deposit");
+        System.out.println("2. P) Make Payment");
+        System.out.println("3. L)Ledger");
+        System.out.println("4. E) Exit ");
+        System.out.print("Choose type number: ");
     }
 
-    public static void deposit(){
-        System.out.println("Please add the ammount deposited");
+    public static double deposit(){
+        deposit;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please add the amount deposited");
+        System.out.println("Enter Price (ex: 12.99)");
+        double deposit  = scanner.nextDouble;
+
+        double deposit
+
 
     }
+
 }
