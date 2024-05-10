@@ -1,23 +1,67 @@
 package com.pluralsight;
+import java.io.*;
+import java.util.Arrays;
 import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws FileNotFoundException {
+        FileOutputStream fos = new FileOutputStream("src/main/resources/deposits.csv", true);
+        PrintWriter pw = new PrintWriter(fos);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("How many deposits will you add? ");
+
+        int numDeposits = scanner.nextInt();
+
+        double[] deposits = new double[numDeposits];
+
+        System.out.println("Enter " + numDeposits + " deposit values: ");
+        for (int i = 0; i < numDeposits; i++) {
+            deposits[i] = scanner.nextDouble();
+        }
+
+        // process the deposit values as needed calculate total
+
+        // Calculate the total deposit amount
+        double totalDepositAmount = 0;
+        for (double deposit : deposits) {
+            totalDepositAmount += deposit;
+        }
+        System.out.println("Total amount deposited: $" + totalDepositAmount);
+
+
+        // Close the scanner
+        scanner.close();
+
+        pw.println("Number of deposits made " +numDeposits );
+        pw.println("deposits made" + Arrays.toString(deposits));
+        pw.println("total " + totalDepositAmount);
+
+        pw.close();
+
+        System.out.println("file deposits.csv has been written");
+
+
+
 //        homeScreen();
        // deposit();
-//        String choice = scanner.nextLine();
-//        switch (choice) {
-//            case 1: deposit();
-//            break;
+
+
+
+
+   //     Scanner scanner = new Scanner(System.in);
+  //      String choice = scanner.nextLine();
+//    switch (choice) {
+//           case 1:d
+//
+//           break;
 //            case 2 :
 //            case 3:
 //            case 4:
 //                break;
 //
 //
-//        }
+ //     }
 
 
     }
@@ -30,26 +74,9 @@ public class Main {
 //        System.out.print("Choose type number: ");
 //    }
 
-    public static double deposit(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please add the amount deposited");
-        System.out.println("Enter Price (ex: 12.99)");
-        double d  = scanner.nextDouble();
-        System.out.println("deposited: " + d);
-
-        double[] addDeposit = new double[d];
-
-        for (double  i = 0; i < d; i++) {
-            addDeposit[i] = scanner.nextDouble();
-        }
-
-        for (double i = 0; i < d; i++) {
-            System.out.println(addDeposit[i]);
-        }
 
 
 
-//
 //        try {
 //            FileWriter fileWriter = new FileWriter("src/main/resources/deposits.csv", true);
 //
@@ -71,7 +98,7 @@ public class Main {
 //
 //
 //         return double;
-    }
+ //
 //    // need to substract data
 //    public static double Payment() {
 //        System.out.println("Please type payment amount");
